@@ -26,9 +26,9 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     context 'with valid credentials' do
-      it 'redirects user to links index on success' do
+      it 'redirects user to beers index on success' do
         post :create, params: { user: { username: 'jack_bruce', password: 'abcdef' } }
-        expect(response).to redirect_to(links_url)
+        expect(response).to redirect_to(beers_url)
       end
 
       it 'logs in the user' do

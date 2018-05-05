@@ -1,2 +1,10 @@
-<h1>Beers#index</h1>
-<p>Find me in app/views/beers/index.html.erb</p>
+<h1>All Beers</h1>
+
+<% if @beers %>
+  <% @beers.each do |beer| %>
+    <%= beer_to beer.title, beer_url(beer) %>
+  <% end %>
+<% end %>
+
+
+<%= link_to "Add Beer", new_beer_url %>
