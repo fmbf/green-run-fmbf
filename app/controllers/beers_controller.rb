@@ -1,7 +1,8 @@
 class BeersController < ApplicationController
+  before_action :require_logged_in
 
   def index
-    @beer = Beer.all
+    @beers = Beer.all
   end
 
   def new
