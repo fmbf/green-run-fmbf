@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'breweries/index'
+
+  get 'breweries/new'
+
+  get 'breweries/create'
+
+  get 'breweries/show'
+
+  get 'breweries/edit'
+
+  get 'breweries/update'
+
+  get 'breweries/destroy'
+
   # get 'beers/index'
   # get 'beers/new'
   # get 'beers/create'
