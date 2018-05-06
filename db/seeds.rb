@@ -192,7 +192,8 @@ Beer.all.each do |beer|
     Comment.create(
       user: User.all.sample,
       beer: beer,
-      body: Faker::Hipster.sentence,
+      # body: Faker::Hipster.sentence,
+      body: Faker::Coffee.notes,
     )
   end
 end
