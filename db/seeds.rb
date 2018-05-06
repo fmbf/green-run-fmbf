@@ -5,6 +5,10 @@
 
 User.create(username: "bobby_tables", password: "tables")
 
+20.times do
+  User.create(username: Faker::Name.first_name, password: "password")
+end
+
 # -------------- Breweries -------------- #
 nhb = Brewery.create(name: "Northern Hemisphere Brewco")
 shb = Brewery.create(name: "Southern Hemisphere Brewco")
@@ -183,3 +187,12 @@ Beer.create(
 )
 
 # -------------- Comments -------------- #
+Beer.all.each do |beer|
+  3.times do
+    Comment.create(
+      user: User.all.sample,
+      beer: beer,
+      body: Faker::HowIMetYourMother.catch_phrase,
+    )
+  end
+end

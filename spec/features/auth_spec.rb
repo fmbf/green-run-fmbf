@@ -14,24 +14,24 @@ feature 'Sign up' do
     expect(page).to have_content 'Password'
   end
 
-  it 'redirects to links index and displays user\'s username on success' do
+  it 'redirects to beers index and displays user\'s username on success' do
     sign_up_as_ginger_baker
     # add user name to application.html.erb layout
     expect(page).to have_content 'ginger_baker'
-    expect(current_path).to eq(links_path)
+    expect(current_path).to eq(beers_path)
   end
 end
 
 feature 'Sign out' do
-  it 'has a sign out button' do
+  it 'has a sign out link' do
     sign_up_as_ginger_baker
-    expect(page).to have_button 'Sign Out'
+    expect(page).to have_link 'Sign Out'
   end
 
   it 'after logout, user is redirected to login form' do
     sign_up_as_ginger_baker
 
-    click_button 'Sign Out'
+    click_link 'Sign Out'
 
     # redirect to login page
     expect(current_path).to eq(new_session_path)
@@ -63,11 +63,11 @@ feature 'Sign in' do
     expect(page).to have_content 'Username'
   end
 
-  it 'takes a user to links index on success' do
+  it 'takes a user to beers index on success' do
     User.create!(username: 'jack_bruce', password: 'abcdef')
     sign_in('jack_bruce')
 
     expect(page).to have_content 'jack_bruce'
-    expect(current_path).to eq(links_path)
+    expect(current_path).to eq(beers_path)
   end
 end
