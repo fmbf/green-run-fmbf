@@ -1,0 +1,37 @@
+.button {
+  font-weight: 400;
+  text-transform: lowercase;
+
+  a {
+    border: 2px solid;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 1.2em;
+
+    padding: 0.5em 2em;
+    margin: 0.2em 0em;
+    margin-right: 1.4em;
+  }
+
+  a:hover {
+    color: #161e28;
+    background-color: #00B7FF;
+    border-color: #00B7FF;
+  }
+
+  margin: 2em 0em;
+}
+
+
+// .button-2 {
+//   a {
+//     // background-color: #00B7FF;
+//     // background-color: rgba(255, 255, 255, 0.1);
+//     background-color: #00B7FF;
+//     // color: #161e28;
+//     // color: #fff;
+//     border-color: #00B7FF;
+//     // border-color: #eee;
+//     color: #161e28;
+//   }
+// }

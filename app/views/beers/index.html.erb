@@ -1,14 +1,31 @@
-<h1>All Beers</h1>
+<div class="content-padded">
 
-<% if @beers %>
-  <ul>
-    <% @beers.each do |beer| %>
-    <li>
-      <%= link_to beer.name, beer_url(beer) %>
-    </li>
+  <h1>All Beers</h1>
+  <i class="core-top-bar__cta-icon icon-liftopia-icon"></i>
+
+  <% if @beers %>
+    <ul>
+      <% @beers.each do |beer| %>
+      <li>
+        <%= link_to beer.name, beer_url(beer) %>
+      </li>
+      <% end %>
     <% end %>
-  <% end %>
-  </ul>
+    </ul>
 
+  <!-- <div class="toast-pic">
+    <img alt="toast" src="/assets/toast.png" height='50px'>
+  </div> -->
 
-<%= link_to "Add Beer", new_beer_url %>
+  <!-- <%= link_to "Add Beer", new_beer_url %> -->
+  <a href="/beers/new">Add Beer <i class="fas fa-plus-circle fa-md"></i></a>
+  <!-- <div class="class="button button-1"">
+    <a href="/beers/new">New Beer</a>
+  </div> -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+</div>

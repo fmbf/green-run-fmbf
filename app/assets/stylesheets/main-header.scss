@@ -1,0 +1,54 @@
+#main-header {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+
+  padding: 0.6em 1em;
+
+  font-size: 2em;
+  background-color: #161e28; //anblack
+  color: #fff;
+
+  h1{
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+#title-logo-link {
+  // border: 2px solid red;
+  display: flex;
+
+  .toast-pic-div{
+    // border: 2px solid gray;
+    display: flex;
+    align-items: center;
+    margin: 1.6em 1em;
+  }
+  max-height: 120px;
+}
+
+#title-link {
+  // border: 2px solid blue;
+  color: #fff;
+}
+
+#title-link:hover {
+  // color: #00B7FF;
+  text-decoration: none;
+}
+
+.header-user-div {
+  display: flex;
+  font-size: 0.45em;
+
+  padding: 0.7em 0;
+
+  a {
+    padding: 0 0.5em;
+  }
+}

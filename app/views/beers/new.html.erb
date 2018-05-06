@@ -1,62 +1,65 @@
-<h1>Add New Beer</h1>
-<%= link_to 'Back To All Beer', beers_url %>
-<br>
-<br>
+<div class="content-padded">
+  <h1>Add New Beer</h1>
+  <%= link_to 'Back To All Beer', beers_url %>
+  <br>
+  <br>
 
-<!-- Add beer form -->
-<label for="">
-  <form id="beerform" action="<%= beers_url %>" method="post">
-    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <!-- Add beer form -->
+  <div class="new-beer-form-div">
 
-    <label for="">Name:
+    <form id="beerform" action="<%= beers_url %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+      <label for="">Name:
+        <br>
+        <input type="text" name="beer[name]" value="<%=@beer.name%>">
+      </label>
       <br>
-      <input type="text" name="beer[name]" value="<%=@beer.name%>">
-    </label>
-    <br>
 
-    <label for="">Brewery:
-      <br>
-      <select form="beerform" name="beer[brewery_id]">
-        <% @breweries.each do |brewery| %>
+      <label for="">Brewery:
+        <br>
+        <select form="beerform" name="beer[brewery_id]">
+          <% @breweries.each do |brewery| %>
           <option value="<%= brewery.id %>"><%= brewery.name %></option>
-        <% end %>
-      </select>
-    </label>
-    <br>
-
-    <label for="">Actively Brewed:
+          <% end %>
+        </select>
+      </label>
       <br>
-      <input type="checkbox" name="beer[actively_brewed]" value="<%=@beer.actively_brewed%>">
-    </label>
-    <br>
 
-    <label for="">ibu:
+      <label for="">Actively Brewed:
+        <br>
+        <input type="checkbox" name="beer[actively_brewed]" value="<%=@beer.actively_brewed%>">
+      </label>
       <br>
-      <input type="number" name="beer[ibu]" value="<%=@beer.ibu%>">
-    </label>
-    <br>
 
-    <label for="">abv:
+      <label for="">ibu:
+        <br>
+        <input type="number" name="beer[ibu]" value="<%=@beer.ibu%>">
+      </label>
       <br>
-      <input type="float" name="beer[abv]" value="<%=@beer.abv%>">
-    </label>
-    <br>
 
-    <label for="">flavors:
+      <label for="">abv:
+        <br>
+        <input type="float" name="beer[abv]" value="<%=@beer.abv%>">
+      </label>
       <br>
-      <input type="text" name="beer[flavors]" value="<%=@beer.flavors%>">
-    </label>
-    <br>
 
-    <label for="">Last Tapped On:
+      <label for="">flavors:
+        <br>
+        <input type="text" name="beer[flavors]" value="<%=@beer.flavors%>">
+      </label>
       <br>
-      <input type="date" name="beer[last_tapped_on]" value="<%=@beer.last_tapped_on%>">
-    </label>
-    <br>
+
+      <label for="">Last Tapped On:
+        <br>
+        <input type="date" name="beer[last_tapped_on]" value="<%=@beer.last_tapped_on%>">
+      </label>
+      <br>
 
 
-    <input type="submit" name="submit" value="Add Beer">
+      <input type="submit" name="submit" value="Add Beer">
 
-  </form>
-</label>
-<!-- ====================================================================== -->
+    </form>
+  </div>
+  <!-- ====================================================================== -->
+</div>

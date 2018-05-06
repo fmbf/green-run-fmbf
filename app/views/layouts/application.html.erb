@@ -6,18 +6,37 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   </head>
 
   <body>
-    <header>
-      <h1>Liftopia Brews</h1>
-      <% if current_user %>
-        welcome <%= current_user.username %>
-        <%= link_to "Sign Out", session_url, method: :delete %>
-      <% else %>
-        <%= link_to "Sign In", new_session_url %>
-        <%= link_to "Sign Up", new_user_url %>
-      <% end %>
+    <header id='main-header'>
+      <div id="title-logo-link">
+        <a id="title-link" href="/beers">
+          <h1>Liftopia Brews</h1>
+        </a>
+        <!-- ToastPic -->
+        <div class="toast-pic-div">
+          <img alt="toast" src="/assets/toast.png" height='60px'>
+        </div>
+      </div>
+
+      <div class="header-user-div">
+        <% if current_user %>
+          <p><%= current_user.username %></p>
+          <a href="/session" data-method="delete">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        <% else %>
+          <div class="button button-1">
+            <%= link_to "Log In", new_session_url %>
+          </div>
+          <div class="button button-2">
+            <%= link_to "Sign Up", new_user_url %>
+          </div>
+        <% end %>
+      </div>
+
     </header>
 
     <% if flash[:errors] %>
@@ -26,6 +45,8 @@
       <% end %>
     <% end %>
 
-    <%= yield %>
+    <div id="main-content">
+      <%= yield %>
+    </div>
   </body>
 </html>

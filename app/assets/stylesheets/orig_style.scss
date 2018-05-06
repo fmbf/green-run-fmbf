@@ -1,9 +1,20 @@
-/* THESE ARE MAPPED SEE: ./style.css.map */
+
 
 body {
-  padding: 50px;
+  // padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 a {
   color: #00B7FF;
+}
+
+
+#main-content {
+  font-size: 1.2em;
+}
+
+.content-padded {
+  padding: 10px 50px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }

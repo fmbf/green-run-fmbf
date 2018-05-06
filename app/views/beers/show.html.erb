@@ -1,60 +1,64 @@
-<h1><%= @beer.name %></h1>
-<h4>Brewed by <%= link_to "#{@beer.brewery.name}", brewery_url(@beer.brewery) %></h4>
+<div class="content-padded">
+  <h1><%= @beer.name %></h1>
+  <h4>Brewed by <%= link_to "#{@beer.brewery.name}", brewery_url(@beer.brewery) %></h4>
 
-<%= link_to 'All Beer', beers_url %>
+  <%= link_to 'All Beer', beers_url %>
 
 
-<!-- List beer attributes -->
-<ul>
+  <!-- List beer attributes -->
+  <ul>
     <% @beer.attributes.keys.each do |key| %>
-      <% next if ["id", "created_at", "brewery_id"].include?(key) %>
-      <li>
-        <strong><%= key.humanize %>:</strong>
-         <%= @beer.attributes[key] %>
-      </li>
+    <% next if ["id", "created_at", "brewery_id"].include?(key) %>
+    <li>
+      <strong><%= key.humanize %>:</strong>
+      <%= @beer.attributes[key] %>
+    </li>
     <% end %>
-</ul>
-<!-- ====================================================================== -->
+  </ul>
+  <!-- ====================================================================== -->
+
+
+  <a href="<%= "/beers/#{@beer.id}/edit" %>"><i class="far fa-edit fa-lg"></i></a>
+
+  <a href="<%= "/beers/#{@beer.id}" %>" data-confirm="Are you sure?" data-method="delete">
+    <i class="far fa-trash-alt fa-lg"></i>
+  </a>
 
 
 
-<%= link_to 'Edit Beer', edit_beer_url(@beer) %>
-<%= link_to 'Delete Beer', beer_url(@beer), method: :delete %>
-
-
+</div>
 
 <!-- Iterate and display all comments for this beer -->
-<h3>Comments</h3>
-<% if @beer.comments %>
-  <% @beer.comments.each do |comment| %>
-
-    <div class="comment-div">
+<div class="comment-div">
+  <div class="content-padded">
+    <h2>Comments</h2>
+    <% if @beer.comments %>
+      <% @beer.comments.each do |comment| %>
+      <br>
       <strong><%= comment.user.username %>:</strong>
 
-      <p class="comment-body">
+      <div class="comment-body">
         <%= comment.body %>
-        <%= link_to 'Delete Comment', comment_url(comment), method: :delete if comment.user == current_user %>
-      </p>
-    </div>
-
-  <% end %>
-<% end %>
-<!-- ====================================================================== -->
-
-
-<br>
-<br>
-<!-- Add comment form -->
-<label for="">Add Comment
-  <form action="<%=beer_comments_url(@beer)%>" method="post">
-    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-
-
-    <textarea name="comment[body]" rows="8" cols="40"></textarea>
-
-
-    <input type="submit" name="submit" value="Add Comment">
-
-  </form>
-</label>
+        <!-- <%= link_to 'Delete Comment', comment_url(comment), method: :delete if comment.user == current_user %> -->
+        <% if comment.user == current_user %>
+        <!-- <a href="<%= "/comments/#{comment.id}/delete" %>"><i class="far fa-trash-alt fa-sm"></i></a> -->
+        <a data-confirm="Are you sure?" data-method="delete" href="<%= "/comments/#{comment.id}" %>" rel="nofollow">
+          Delete
+        </a>
+        <% end %>
+      </div>
+      <% end %>
+    <% end %>
+    <br>
+    <br>
+    <!-- Add comment form -->
+    <label for="">Add Comment
+      <form action="<%=beer_comments_url(@beer)%>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+        <input name="comment[body]" type='text'></input>
+        <input type="submit" name="submit" value="Add Comment">
+      </form>
+    </label>
+  </div>
+</div>
 <!-- ====================================================================== -->
