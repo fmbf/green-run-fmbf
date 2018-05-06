@@ -5,8 +5,9 @@
 
 <!-- Add beer form -->
 <label for="">
-  <form id="beerform" action="<%= beers_url %>" method="patch">
+  <form id="beerform" action="<%= beer_url(@beer) %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+    <input type="hidden" name="_method" value="patch">
 
     <label for="">Name:
       <br>

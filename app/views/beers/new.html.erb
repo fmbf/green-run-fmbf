@@ -17,10 +17,8 @@
     <label for="">Brewery:
       <br>
       <select form="beerform" name="beer[brewery_id]">
-        <% if @breweries %>
-          <% @breweries.each do |brewery| %>
-            <option value="<%= brewery.id %>"><%= brewery.name %></option>
-          <% end %>
+        <% @breweries.each do |brewery| %>
+          <option value="<%= brewery.id %>"><%= brewery.name %></option>
         <% end %>
       </select>
     </label>
