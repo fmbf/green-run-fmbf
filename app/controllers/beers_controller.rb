@@ -42,7 +42,7 @@ class BeersController < ApplicationController
   def destroy
     @beer = Beer.find_by(id: params[:id])
     @beer.destroy
-    redirect_to beer_url(@beer)
+    redirect_to beers_url
   end
 
   private

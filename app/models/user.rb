@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :session_token, :username, :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   attr_reader :password
 

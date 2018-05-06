@@ -3,5 +3,5 @@ class Beer < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   belongs_to :brewery
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end

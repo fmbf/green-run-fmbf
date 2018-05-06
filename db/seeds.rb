@@ -6,7 +6,7 @@
 User.create(username: "bobby_tables", password: "tables")
 
 20.times do
-  User.create(username: Faker::Name.first_name, password: "password")
+  User.create(username: Faker::Name.unique.first_name, password: "password")
 end
 
 # -------------- Breweries -------------- #
@@ -192,7 +192,7 @@ Beer.all.each do |beer|
     Comment.create(
       user: User.all.sample,
       beer: beer,
-      body: Faker::HowIMetYourMother.catch_phrase,
+      body: Faker::Hipster.sentence,
     )
   end
 end
