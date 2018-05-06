@@ -7,10 +7,14 @@ class BeersController < ApplicationController
 
   def new
     @beer = Beer.new
+    @breweries = Brewery.all
   end
 
   def create
     @beer = Beer.new(beer_params)
+    # debugger
+    # @brewery = Brewery.find_by(id: params[:brewery_id])
+    # @beer.brewery = @brewery
 
     if @beer.save
       redirect_to beer_url(@beer)
@@ -26,6 +30,7 @@ class BeersController < ApplicationController
 
   def edit
     @beer = Beer.find_by(id: params[:id])
+    @breweries = Brewery.all
   end
 
   def update
@@ -47,6 +52,14 @@ class BeersController < ApplicationController
 
   private
   def beer_params
-    params.require(:beer).permit(:name, :brewery_id)
+    params.require(:beer).permit(
+      :name,
+      :brewery_id,
+      :actively_brewed,
+      :ibu,
+      :abv,
+      :flavors,
+      :last_tapped_on,
+    )
   end
 end
