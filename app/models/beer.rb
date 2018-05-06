@@ -1,5 +1,5 @@
 class Beer < ApplicationRecord
-  validates :brewery, presence: true
+  validates :brewery_id, presence: true
   validates :name, presence: true, uniqueness: true
 
   belongs_to :brewery

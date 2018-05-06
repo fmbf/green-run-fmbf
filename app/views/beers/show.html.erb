@@ -1,2 +1,47 @@
-<h1>Beers#show</h1>
-<p>Find me in app/views/beers/show.html.erb</p>
+<h1><%= @beer.name %></h1>
+<%= link_to 'All Beer', beers_url %>
+<%= link_to 'Edit Beer', edit_beer_url(@beer) %>
+
+
+
+
+
+<ul>
+    <% @beer.attributes.keys.each do |key| %>
+      <% next if ["id", "created_at", "brewery_id"].include?(key) %>
+      <li>
+        <%= key.capitalize %>: <%= @beer.attributes[key] %>
+      </li>
+    <% end %>
+
+    <li>Brewery: <%= link_to "#{@beer.brewery.name}", brewery_url(@beer.brewery) %></li>
+</ul>
+
+
+
+
+<label for="">Add Comment
+  <form action="<%=beer_comments_url(@beer)%>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+    <input type="text" name="comment[body]" value="<%#=@comment.body%>">
+
+
+    <input type="submit" name="submit" value="Add Comment">
+
+  </form>
+</label>
+
+
+
+
+<% if @beer.comments %>
+  <% @beer.comments.each do |comment| %>
+    <ul>
+      <li>
+        <%= comment.body %>
+        <% button_to 'Remove Comment', comment_url(comment), method: :delete if comment.user == current_user %>
+      </li>
+    </ul>
+  <% end %>
+<% end %>

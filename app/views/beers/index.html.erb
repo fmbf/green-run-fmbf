@@ -1,10 +1,14 @@
 <h1>All Beers</h1>
 
 <% if @beers %>
-  <% @beers.each do |beer| %>
-    <%= beer_to beer.title, beer_url(beer) %>
+  <ul>
+    <% @beers.each do |beer| %>
+    <li>
+      <%= link_to beer.name, beer_url(beer) %>
+    </li>
+    <% end %>
   <% end %>
-<% end %>
+  </ul>
 
 
 <%= link_to "Add Beer", new_beer_url %>
