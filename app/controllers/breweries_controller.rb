@@ -13,7 +13,7 @@ class BreweriesController < ApplicationController
     @brewery = Brewery.new(brewery_params)
 
     if @brewery.save
-      redirect_to beers_url
+      render :index
     else
       flash.now[:errors] = [@brewery.errors.full_messages]
       render :new
