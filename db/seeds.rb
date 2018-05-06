@@ -114,7 +114,7 @@ pope = Beer.create(
 
 Beer.create(
   name: "Chocolate Pukwudgie Stout",
-  activelyBrewed: true,
+  actively_brewed: true,
   ibu: 35,
   abv: 12.2,
   flavors: "chocolate, coffee",
@@ -124,7 +124,7 @@ Beer.create(
 
 Beer.create(
   name: "Sharlie Pilsner",
-  activelyBrewed: true,
+  actively_brewed: true,
   ibu: 31,
   abv: 4.1,
   flavors: "grass",
@@ -134,7 +134,7 @@ Beer.create(
 
 Beer.create(
   name: "Sigbin Stout",
-  activelyBrewed: false,
+  actively_brewed: false,
   ibu: 65,
   abv: 8.1,
   flavors: "coffee, caramel",
@@ -144,7 +144,7 @@ Beer.create(
 
 Beer.create(
   name: "Snallygaster Pale Ale",
-  activelyBrewed: false,
+  actively_brewed: false,
   ibu: 89,
   abv: 9.7,
   flavors: "pine, honey",
@@ -154,7 +154,7 @@ Beer.create(
 
 Beer.create(
   name: "Tikibalang Barley Wine",
-  activelyBrewed: true,
+  actively_brewed: true,
   ibu: 45,
   abv: 9.6,
   flavors: "bourbon",
@@ -164,7 +164,7 @@ Beer.create(
 
 Beer.create(
   name: "Pale Popobawa Ale",
-  activelyBrewed: true,
+  actively_brewed: true,
   ibu: 30,
   abv: 4.4,
   flavors: "wheat",
@@ -174,7 +174,7 @@ Beer.create(
 
 Beer.create(
   name: "North Adjule Lager",
-  activelyBrewed: true,
+  actively_brewed: true,
   ibu: 30,
   abv: 3.7,
   flavors: "citrus",
