@@ -23,15 +23,20 @@
 }
 
 
-// .button-2 {
-//   a {
-//     // background-color: #00B7FF;
-//     // background-color: rgba(255, 255, 255, 0.1);
-//     background-color: #00B7FF;
-//     // color: #161e28;
-//     // color: #fff;
-//     border-color: #00B7FF;
-//     // border-color: #eee;
-//     color: #161e28;
-//   }
-// }
+.button-2 {
+  a {
+    // background-color: #00B7FF;
+    // background-color: rgba(255, 255, 255, 0.1);
+    // background-color: #00B7FF;
+    // color: #161e28;
+    // color: #fff;
+    border-color: #f9af53;
+    // border-color: #eee;
+    color: #f9af53;
+  }
+  a:hover {
+    color: #161e28;
+    background-color: #f9af53;
+    border-color: #f9af53;
+  }
+}

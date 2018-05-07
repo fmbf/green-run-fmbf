@@ -12,9 +12,6 @@ class BeersController < ApplicationController
 
   def create
     @beer = Beer.new(beer_params)
-    # debugger
-    # @brewery = Brewery.find_by(id: params[:brewery_id])
-    # @beer.brewery = @brewery
 
     if @beer.save
       redirect_to beer_url(@beer)
@@ -60,6 +57,7 @@ class BeersController < ApplicationController
       :abv,
       :flavors,
       :last_tapped_on,
+      # :search,
     )
   end
 end

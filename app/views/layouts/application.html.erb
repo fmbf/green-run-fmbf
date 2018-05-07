@@ -22,20 +22,36 @@
       </div>
 
       <div class="header-user-div">
+
         <% if current_user %>
+
           <p><%= current_user.username %></p>
           <a href="/session" data-method="delete">
             <i class="fas fa-sign-out-alt"></i>
           </a>
+
+          <div id="search-div">
+            <form class="" action="<%= beers_url %>" method="post">
+              <input type="search" name="beer[search]" placeholder="search" value="">
+              <input type="submit" name="submit" value="Search">
+              <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+            </form>
+          </div>
+
         <% else %>
+
           <div class="button button-1">
             <%= link_to "Log In", new_session_url %>
           </div>
+
           <div class="button button-2">
             <%= link_to "Sign Up", new_user_url %>
           </div>
         <% end %>
+
       </div>
+
+
 
     </header>
 

@@ -52,3 +52,20 @@
     padding: 0 0.5em;
   }
 }
+
+
+#search-div {
+  // border: 1px solid red;
+  // height: 10px;
+  margin-left: 1em;
+
+  input {
+    // border: 1px solid blue;
+    margin: 0;
+    // min-height: 5em;
+  }
+}
+
+#search-div > form > input[type="submit"]:nth-child(2) {
+  display: none;
+}
