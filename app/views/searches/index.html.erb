@@ -3,6 +3,9 @@
   <h1>Matching Beers</h1>
 
   <% if @search_result %>
+    <% if @search_result.empty? %>
+      <p>No matches found...</p>
+    <% end %>
     <ul>
       <% @search_result.each do |beer| %>
       <li>
@@ -12,8 +15,8 @@
     </ul>
   <% end %>
 
-
   <br>
+  <%= link_to 'Back To All Beer', beers_url %>
   <br>
   <br>
   <br>

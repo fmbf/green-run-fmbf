@@ -50,19 +50,18 @@
         <% end %>
 
       </div>
-
-
-
     </header>
-
-    <% if flash[:errors] %>
-      <% flash[:errors].each do |error| %>
-        <%= error %>
-      <% end %>
-    <% end %>
 
     <div id="main-content">
       <%= yield %>
+    </div>
+
+    <div class="content-padded">
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
     </div>
   </body>
 </html>

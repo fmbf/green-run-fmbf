@@ -1,14 +1,17 @@
-<h1>Beers by <%= @brewery.name %></h1>
+<div class="content-padded">
 
-<% if @brewery.beers %>
-  <ul>
-    <% @brewery.beers.each do |beer| %>
-    <li>
-      <%= link_to beer.name, beer_url(beer) %>
-    </li>
+  <h1>Beers by <%= @brewery.name %></h1>
+
+  <% if @brewery.beers %>
+    <ul>
+      <% @brewery.beers.each do |beer| %>
+      <li>
+        <%= link_to beer.name, beer_url(beer) %>
+      </li>
+      <% end %>
     <% end %>
-  <% end %>
-  </ul>
+    </ul>
 
 
-<%= link_to 'All Beer', beers_url %>
+  <%= link_to 'All Beer', beers_url %>
+</div>

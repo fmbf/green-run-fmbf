@@ -8,6 +8,7 @@
   font-size: 2em;
   background-color: #161e28; //anblack
   color: #fff;
+  color: #f9af53; // beer color
 
   h1{
     font-size: 2em;
@@ -27,7 +28,7 @@
     // border: 2px solid gray;
     display: flex;
     align-items: center;
-    margin: 1.6em 1em;
+    margin: 1.6em 1em 0 1em;
   }
   max-height: 120px;
 }
@@ -35,6 +36,7 @@
 #title-link {
   // border: 2px solid blue;
   color: #fff;
+  color: #f9af53; // beer color
 }
 
 #title-link:hover {
