@@ -17,6 +17,8 @@
     color: #161e28;
     background-color: #00B7FF;
     border-color: #00B7FF;
+    border-radius: 12px;
+    // letter-spacing: 0.2px;
   }
 
   margin: 2em 0em;
@@ -39,4 +41,50 @@
     background-color: #f9af53;
     border-color: #f9af53;
   }
+}
+
+
+input[type="submit"],
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 8em;
+
+  text-align: center;
+
+  font-weight: 200;
+  text-transform: lowercase;
+  transition: all 0.8s ease;
+
+  border: 1px solid;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 0.9em;
+
+  padding: 0.2em 1em;
+  margin: 0.2em 0em;
+  margin-right: 1.4em;
+
+  // margin: 2em 0em;
+
+  a { color: black}
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+input[type="submit"]:hover,
+button:hover {
+    // color: #161e28;
+    // background-color: #00B7FF;
+    // color: #161e28;
+    // border-color: #00B7FF;
+    // letter-spacing: 0.8px;
+    border-radius: 29px;
+    // border: 2px solid black;
 }

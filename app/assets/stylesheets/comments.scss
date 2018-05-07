@@ -4,16 +4,81 @@
 
 
 .comment-div{
-  font-size: 0.8em;
   // display: flex;
-  margin: 1em 0 0 0em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+
+  font-size: 0.8em;
+  color: #161e28; //anblack
+  // display: flex;
+  margin: 3em 0 0 0;
   padding: 0 0 2em 0;
 
   background-color: #eee;
   // background-color: #f9af53;
+  // background-color: rgba(249, 175, 83, 0.99);
   // color: #f9af53;
 
   // color: #f1f7ee;
   padding: 10px 50px;
 
+  h2 {
+    margin: 0;
+  }
+}
+
+.comment-username {
+  // border: 2px solid red;
+  // text-transform: lowercase;
+  text-decoration: underline;
+  font-weight: bold;
+  text-decoration-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5em;
+}
+
+.comment-body {
+  // font-style: italic;
+  // display: flex;
+  margin-left: 1em;
+  font-size: 0.9em;
+}
+
+.add-comment-div {
+  // border: 1px solid #aaa;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  padding: 2em 1em;
+  margin-bottom: 2em;
+
+  textarea {
+    min-width: 50em;
+    max-width: 50em;
+    max-height: 10em;
+    min-height: 10em;
+
+    // background-color: #f8f8f8;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 9px;
+    // border-color: #aaa;
+    border-color: rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    margin: 1em 0;
+  }
+
+  .button-1 {
+    margin-top: 0;
+    input {
+      background-color: transparent;
+    }
+  }
+}
+
+
+.fa-times {
+  margin-left: 0.5em;
+  color: #161e28;
+}
+
+.fa-times:hover, .fa-trash-alt:hover {
+  color: red !important;
 }

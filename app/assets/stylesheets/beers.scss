@@ -2,8 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.beer-name {
+  // text-decoration: underline;
+  // text-decoration-color: rgba(0, 0, 0, 0.3);
+  // font-weight: 200;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 ul li {
   margin: 0.2em 0;
+  font-weight: 400;
+}
+
+.beer-index-element {
+  font-weight: 400;
+  margin: 0.2em 0;
+  display: flex;
+  align-items: center;
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  // height: 1em;
+  // a {
+  //   color: #161e28; //anblack
+  // }
+}
+
+.beer-index-div {
+  // border: 1px solid red;
+
+  // display: flex;
+  max-width: 90%;
+
+  overflow: scroll;
+
 }
 
 // .new-beer-form-div {
@@ -16,4 +47,22 @@ ul li {
 #beerform input, #beerform select {
   margin: 1em 0;
   // background-color: red;
+}
+
+
+.beer-nav-div {
+  // display: inline;
+  margin: 2em 1em;
+  padding: 0.5em;
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+  a {
+    margin: 1em 1em;
+  }
+
+  i:hover {
+    color: #161e28; //anblack
+    // border-bottom: 1px solid #161e28; //anblack
+    // border-radius: 7px;
+    // background-color: #161e28; //anblack
+  }
 }

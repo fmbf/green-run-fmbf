@@ -1,31 +1,28 @@
 <div class="content-padded">
 
-  <h1>All Beers</h1>
+  <h1 class="beer-name">All Beers</h1>
   <!-- <input type="search" name="" value="search"> -->
 
   <% if @beers %>
-    <ul>
+    <div class="beer-index-div">
       <% @beers.each do |beer| %>
-      <li>
+      <div class="beer-index-element">
         <%= link_to beer.name, beer_url(beer) %>
-      </li>
+      </div>
+      <!-- <li class="beerl-index-li">
+        <%= link_to beer.name, beer_url(beer) %>
+      </li> -->
       <% end %>
     <% end %>
-    </ul>
+  </div>
+  <br>
+  <form method="get" action="/beers/new">
+    <button type="submit">Add Beer</button>
+  </form>
 
-  <!-- <div class="toast-pic">
-    <img alt="toast" src="/assets/toast.png" height='50px'>
-  </div> -->
-
-  <!-- <%= link_to "Add Beer", new_beer_url %> -->
-  <a href="/beers/new">Add Beer <i class="fas fa-plus-circle fa-md"></i></a>
-  <!-- <div class="class="button button-1"">
-    <a href="/beers/new">New Beer</a>
-  </div> -->
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <!-- <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>

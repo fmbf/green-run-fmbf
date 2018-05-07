@@ -57,7 +57,6 @@ class BeersController < ApplicationController
       :abv,
       :flavors,
       :last_tapped_on,
-      # :search,
     )
   end
 end

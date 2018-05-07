@@ -11,18 +11,19 @@ span, article, footer, time, small {
 //   outline: 0;
 //   font: inherit;
 //   color: inherit;
-//   text-align: inherit;
+  text-align: inherit;
 //   text-decoration: inherit;
-//   vertical-align: inherit;
-//   box-sizing: inherit;
-//   background: transparent;
-  transition: all 0.3s ease;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+  transition: all 0.5s ease;
 }
 
 body {
   margin: 0;
   padding: 0;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  // background-color: #f9af53; // beer color
 }
 
 
@@ -33,10 +34,12 @@ a:hover {
   text-decoration: underline;
 }
 
-//
-// // ul {
-// //   list-style: none;
-// // }
+
+ul {
+  list-style: none;
+}
+
+
 //
 // // img {
 // //   display: block;
@@ -57,13 +60,15 @@ a:hover {
 //   -webkit-appearance: none;
 //   -moz-appearance: none;
 // }
-//
-// // input[type="text"], input[type="password"], {
-// //   padding: 0.6em 0.5em;
-// //   margin: 0.6em 0em;
-// //   border: 1px solid #ccc;
-// //   border-radius: 5px;
-// // }
+
+input[type="text"], input[type="password"], {
+  padding: 0.2em 0.5em;
+  margin: 0.6em 0em;
+  border: 1px solid #ccc;
+  height: 2em;
+  // border-radius: 5px;
+  border-radius: 3px;
+}
 //
 // button,
 // input[type="submit"] {
