@@ -46,7 +46,7 @@
         <!-- <%= link_to 'Delete Comment', comment_url(comment), method: :delete if comment.user == current_user %> -->
         <% if comment.user == current_user %>
         <!-- <a href="<%= "/comments/#{comment.id}/delete" %>"><i class="far fa-trash-alt fa-sm"></i></a> -->
-        <a data-confirm="Are you sure?" data-method="delete" href="<%= "/comments/#{comment.id}" %>" rel="nofollow">
+        <a class="delete-comment-icon" data-confirm="Are you sure?" data-method="delete" href="<%= "/comments/#{comment.id}" %>" rel="nofollow">
           <i class="fas fa-times"></i>
         </a>
         <% end %>
@@ -65,7 +65,7 @@
         <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
         <textarea name="comment[body]" type='text'></textarea>
         <div class="button button-1">
-          <input class="" type="submit" name="submit" value="comment"></input>
+          <input id="add-comment" class="" type="submit" name="submit" value="comment"></input>
         </div>
       </form>
     </label>
