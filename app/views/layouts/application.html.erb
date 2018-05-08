@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   </head>
 
@@ -13,7 +14,7 @@
     <header id='main-header'>
       <div id="title-logo-link">
         <a id="title-link" href="/beers">
-          <h1>Liftopia Brews</h1>
+          <h1><strong>Liftopia</strong> | Brews</h1>
         </a>
         <!-- ToastPic -->
         <div class="toast-pic-div">
@@ -24,44 +25,69 @@
       <div class="header-user-div">
 
         <% if current_user %>
+          <div class="header" id="myHeader">
+            <p><%= current_user.username %></p>
+            <a href="/session" data-method="delete">
+              <i class="fas fa-sign-out-alt"></i>
+            </a>
 
-          <p><%= current_user.username %></p>
-          <a href="/session" data-method="delete">
-            <i class="fas fa-sign-out-alt"></i>
-          </a>
-
-          <div id="search-div">
-            <form class="" action="/searches/index" method="get">
-              <input type="search" name="query" placeholder="search" value="">
-              <input type="submit" name="submit" value="Search">
-              <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-            </form>
+            <div id="search-div">
+              <form class="" action="/searches/index" method="get">
+                <i class="fas fa-search"></i>
+                <input type="search" name="query" placeholder="search" value="">
+                <input type="submit" name="submit" value="Search">
+                <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+              </form>
+            </div>
           </div>
+
 
         <% else %>
+          <div class="button-div">
+            <div class="button button-1">
+              <%= link_to "Log In", new_session_url %>
+            </div>
 
-          <div class="button button-1">
-            <%= link_to "Log In", new_session_url %>
+            <div class="button button-2">
+              <%= link_to "Sign Up", new_user_url %>
+            </div>
           </div>
 
-          <div class="button button-2">
-            <%= link_to "Sign Up", new_user_url %>
-          </div>
+
         <% end %>
 
       </div>
     </header>
 
-    <div id="main-content">
+    <div id="main-content" class="content animated fadeIn">
       <%= yield %>
     </div>
 
     <% if flash[:errors] %>
-      <div class="content-padded">
+      <div class="content-padded animated fadeInUp errors">
         <% flash[:errors].each do |error| %>
           <%= error %>
         <% end %>
       </div>
     <% end %>
+
+    <div class="footer">
+      For Liftopia <i class="far fa-heart"></i> |
+      <a href="https://www.linkedin.com/in/francesco-mbf/" target="_blank">FMBF</a>
+    </div>
+
+    <script type="text/javascript">
+      window.onscroll = function() {addSticky()};
+      let header = document.getElementById("myHeader");
+      let sticky = header.offsetTop;
+
+      function addSticky() {
+        if (window.pageYOffset >= sticky) {
+          header.classList.add("sticky");
+        } else {
+          header.classList.remove("sticky");
+        }
+      }
+    </script>
   </body>
 </html>

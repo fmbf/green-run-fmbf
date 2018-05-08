@@ -61,7 +61,7 @@ ul {
 //   -moz-appearance: none;
 // }
 
-input[type="text"], input[type="password"], {
+input[type="text"], input[type="password"], input[type="search"], {
   padding: 0.2em 0.5em;
   margin: 0.6em 0em;
   border: 1px solid #ccc;
@@ -69,6 +69,7 @@ input[type="text"], input[type="password"], {
   // border-radius: 5px;
   border-radius: 3px;
 }
+
 //
 // button,
 // input[type="submit"] {

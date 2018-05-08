@@ -1,3 +1,8 @@
+.button-div {
+  display: flex;
+  padding: 0 16px;
+}
+
 .button {
   font-weight: 400;
   text-transform: lowercase;
@@ -52,7 +57,9 @@ button {
   */
   -webkit-appearance: none;
   -moz-appearance: none;
-
+  outline: none;
+  // background-color: #00B7FF;
+  background-color: transparent;
   width: 8em;
 
   text-align: center;
@@ -86,5 +93,6 @@ button:hover {
     // border-color: #00B7FF;
     // letter-spacing: 0.8px;
     border-radius: 29px;
+    outline: none;
     // border: 2px solid black;
 }

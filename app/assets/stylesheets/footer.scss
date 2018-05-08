@@ -1,0 +1,28 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #161e28; //anblack
+  background-color: #f9af53; // beer color
+  color: white;
+  color: #161e28; //anblack
+  // text-align: center;
+  padding: 0.5em 2em 0.5em 2em;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  height: 1em;
+  font-size: 12px;
+
+  a {
+    color: #161e28; //anblack
+    // text-decoration: underline;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 1em 0 0 0;
+    // padding: 0;
+  }
+}

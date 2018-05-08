@@ -38,7 +38,11 @@
       <div class="comment-username"><%= comment.user.username %></div>
 
       <div class="comment-body">
+        <i><%= comment.created_at.to_s[0..9] %></i>
+        <br>
         <%= comment.body %>
+
+
         <!-- <%= link_to 'Delete Comment', comment_url(comment), method: :delete if comment.user == current_user %> -->
         <% if comment.user == current_user %>
         <!-- <a href="<%= "/comments/#{comment.id}/delete" %>"><i class="far fa-trash-alt fa-sm"></i></a> -->
@@ -67,4 +71,6 @@
     </label>
   </div>
 </div>
+<br>
+
 <!-- ====================================================================== -->

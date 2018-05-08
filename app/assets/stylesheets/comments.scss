@@ -4,13 +4,11 @@
 
 
 .comment-div{
-  // display: flex;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-
+  // border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 9px;
 
   font-size: 0.8em;
   color: #161e28; //anblack
-  // display: flex;
   margin: 3em 0 0 0;
   padding: 0 0 2em 0;
 
@@ -56,13 +54,13 @@
     max-height: 10em;
     min-height: 10em;
 
-    // background-color: #f8f8f8;
     background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid;
     border-radius: 9px;
-    // border-color: #aaa;
     border-color: rgba(0, 0, 0, 0.2);
     padding: 1em;
     margin: 1em 0;
+    -moz-appearance: none;
   }
 
   .button-1 {
