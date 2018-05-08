@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to beer_url(params[:beer_id])
     else
-      flash[:errors] = [@comment.errors.full_messages]
+      flash[:errors] = @comment.errors.full_messages
       redirect_to beer_url(params[:beer_id])
     end
   end

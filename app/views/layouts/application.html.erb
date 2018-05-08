@@ -24,17 +24,17 @@
 
       <div class="header-user-div">
 
-        <% if current_user %>
+        <% if logged_in? %>
           <div class="header" id="myHeader">
             <p><%= current_user.username %></p>
-            <a href="/session" data-method="delete">
+            <a href="/session" data-method="delete" name='Sign Out' id="sign-out">
               <i class="fas fa-sign-out-alt"></i>
             </a>
 
             <div id="search-div">
               <form class="" action="/searches/index" method="get">
                 <i class="fas fa-search"></i>
-                <input type="search" name="query" placeholder="search" value="">
+                <input type="search" name="query" placeholder="name, flavor, brewery..." value="">
                 <input type="submit" name="submit" value="Search">
                 <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
               </form>
@@ -61,15 +61,17 @@
 
     <div id="main-content" class="content animated fadeIn">
       <%= yield %>
+
+      <% if flash[:errors] %>
+        <div class="content-padded animated fadeInUp errors">
+          <% flash[:errors].each do |error| %>
+            <%= error %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
-    <% if flash[:errors] %>
-      <div class="content-padded animated fadeInUp errors">
-        <% flash[:errors].each do |error| %>
-          <%= error %>
-        <% end %>
-      </div>
-    <% end %>
+
 
     <div class="footer">
       For Liftopia <i class="far fa-heart"></i> |

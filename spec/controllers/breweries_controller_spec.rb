@@ -79,7 +79,7 @@ RSpec.describe BreweriesController, type: :controller do
       end
 
       context 'with invalid params' do
-        it 'validates the presence of name and brewery_id' do
+        it 'validates the presence of name' do
           post :create, params: { brewery: { name: nil } }
           expect(response).to render_template('new')
           expect(flash[:errors]).to be_present

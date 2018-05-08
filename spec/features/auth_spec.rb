@@ -25,25 +25,24 @@ end
 feature 'Sign out' do
   it 'has a sign out link' do
     sign_up_as_ginger_baker
-    expect(page).to have_link 'Sign Out'
+    page.find(:css,'#sign-out')
   end
 
   it 'after logout, user is redirected to login form' do
     sign_up_as_ginger_baker
-
-    click_link 'Sign Out'
+    find('#sign-out').click
 
     # redirect to login page
     expect(current_path).to eq(new_session_path)
-    expect(page).to have_content 'Sign In'
+    expect(page).to have_content 'Log In'
     expect(page).to have_content 'Username'
   end
 end
 
 feature 'Sign in' do
-  it 'has a sign in page' do
+  it 'has a log in page' do
     visit new_session_path
-    expect(page).to have_content 'Sign In'
+    expect(page).to have_content 'Log In'
   end
 
   it 'takes a username and password' do
@@ -52,14 +51,14 @@ feature 'Sign in' do
     expect(page).to have_content 'Password'
   end
 
-  it 'returns to sign in on failure' do
+  it 'returns to log in on failure' do
     visit new_session_path
     fill_in 'Username', with: 'ginger_baker'
     fill_in 'Password', with: 'hello'
-    click_button 'Sign In'
+    click_button 'Log In'
 
     # return to sign-in page
-    expect(page).to have_content 'Sign In'
+    expect(page).to have_content 'Log In'
     expect(page).to have_content 'Username'
   end
 

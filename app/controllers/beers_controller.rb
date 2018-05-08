@@ -12,11 +12,12 @@ class BeersController < ApplicationController
 
   def create
     @beer = Beer.new(beer_params)
+    @breweries = Brewery.all
 
     if @beer.save
       redirect_to beer_url(@beer)
     else
-      flash.now[:errors] = [@beer.errors.full_messages]
+      flash.now[:errors] = @beer.errors.full_messages
       render :new
     end
   end
@@ -32,11 +33,12 @@ class BeersController < ApplicationController
 
   def update
     @beer = Beer.find_by(id: params[:id])
+    @breweries = Brewery.all
 
     if @beer.update_attributes(beer_params)
       redirect_to beer_url(@beer)
     else
-      flash.now[:errors] = [@beer.errors.full_messages]
+      flash.now[:errors] = @beer.errors.full_messages
       render :edit
     end
   end

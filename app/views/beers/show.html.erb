@@ -19,8 +19,8 @@
   <!-- ====================================================================== -->
 
   <nav class="beer-nav-div">
-    <a href="/beers"><i class="fas fa-arrow-left fa-lg"></i></a>
-    <a href="<%= "/beers/#{@beer.id}/edit" %>"><i class="far fa-edit fa-lg"></i></a>
+    <a href="/beers" id='link-to-all-beers'><i class="fas fa-arrow-left fa-lg"></i></a>
+    <a href="<%= "/beers/#{@beer.id}/edit" %>" id='link-to-edit-beer'><i class="far fa-edit fa-lg"></i></a>
     <a href="<%= "/beers/#{@beer.id}" %>" data-confirm="Are you sure?" data-method="delete">
       <i class="far fa-trash-alt fa-lg"></i>
     </a>

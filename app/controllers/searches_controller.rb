@@ -2,12 +2,6 @@ class SearchesController < ApplicationController
   def index
     @query = params[:query]
 
-    # @search_result = {
-    #   'beers' => beers_index(@query),
-    #   'breweries' => breweries_index(@query),
-    #   'flavors' => flavors_index(@query),
-    # }
-
     @search_result = []
     @search_result += beers_index(@query)
     @search_result += breweries_index(@query)

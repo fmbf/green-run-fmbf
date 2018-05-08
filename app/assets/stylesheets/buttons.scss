@@ -16,11 +16,15 @@
     padding: 0.5em 2em;
     margin: 0.2em 0em;
     margin-right: 1.4em;
+
+    color: #161e28;
+    background-color: #00B7FF;
+    border-color: #00B7FF;
   }
 
   a:hover {
-    color: #161e28;
-    background-color: #00B7FF;
+    color: #00B7FF;
+    background-color: #161e28;
     border-color: #00B7FF;
     border-radius: 12px;
     // letter-spacing: 0.2px;
@@ -32,18 +36,15 @@
 
 .button-2 {
   a {
-    // background-color: #00B7FF;
-    // background-color: rgba(255, 255, 255, 0.1);
-    // background-color: #00B7FF;
-    // color: #161e28;
-    // color: #fff;
     border-color: #f9af53;
-    // border-color: #eee;
-    color: #f9af53;
+    color: #161e28;
+
+
+    background-color: #f9af53;
   }
   a:hover {
-    color: #161e28;
-    background-color: #f9af53;
+    color: #f9af53;
+    background-color: #161e28;
     border-color: #f9af53;
   }
 }
@@ -58,7 +59,6 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: none;
-  // background-color: #00B7FF;
   background-color: transparent;
   width: 8em;
 
@@ -87,12 +87,6 @@ button {
 
 input[type="submit"]:hover,
 button:hover {
-    // color: #161e28;
-    // background-color: #00B7FF;
-    // color: #161e28;
-    // border-color: #00B7FF;
-    // letter-spacing: 0.8px;
     border-radius: 29px;
     outline: none;
-    // border: 2px solid black;
 }

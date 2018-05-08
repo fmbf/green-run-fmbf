@@ -18,9 +18,11 @@
 
       <label for="">Brewery:
         <br>
-        <select form="beerform" name="beer[brewery_id]">
-          <% @breweries.each do |brewery| %>
-          <option value="<%= brewery.id %>"><%= brewery.name %></option>
+        <select id='new-beer-brewery-select' form="beerform" name="beer[brewery_id]">
+          <% if @breweries %>
+            <% @breweries.each do |brewery| %>
+              <option value="<%= brewery.id %>"><%= brewery.name %></option>
+            <% end %>
           <% end %>
         </select>
       </label>
@@ -57,12 +59,12 @@
       <br>
 
 
-      <input type="submit" name="submit" value="Add Beer">
+      <input type="submit" name="submit" value="Add Beer" id='add-beer-form-button'>
       <!-- <%= link_to 'Cancel', beers_url %> -->
     </form>
   </div>
   <!-- ====================================================================== -->
 </div>
+<!-- <br>
 <br>
-<br>
-<br>
+<br> -->

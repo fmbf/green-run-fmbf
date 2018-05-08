@@ -25,11 +25,11 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 if ENV['grading'] == 'true'
   %w(
     CommentsController
-    LinksController
+    BeersController
     SessionsController
     UsersController
     Comment
-    Link
+    Beer
     User
   ).each do |constant|
     begin
@@ -122,11 +122,6 @@ RSpec.configure do |config|
 =end
 end
 
-def create_jill_with_link
-  let(:jill) { User.create!(username: 'jill_bruce', password: 'abcdef') }
-  let(:jill_link) { jill.links.create!(title: 'Jill Link', url: 'cats.com') }
-end
-
 def sign_up(username)
   visit new_user_path
   fill_in 'Username', with: username
@@ -142,15 +137,16 @@ def sign_in(username)
   visit new_session_path
   fill_in 'Username', with: username
   fill_in 'Password', with: 'abcdef'
-  click_button 'Sign In'
+  click_button 'Log In'
 end
 
-def make_link(title = nil, url = nil)
-  title ||= 'reddit'
-  url ||= 'http://www.reddit.com'
+def make_beer(name = nil, brewery_id = nil)
+  # Brewery.create!(name: 'La Paloma Brewing')
+  name ||= 'Deliciosa Lager'
+  # brewery_id ||= 1
 
-  visit new_link_path
-  fill_in 'Title', with: title
-  fill_in 'URL', with: url
-  click_button 'Create New Link'
+  visit new_beer_path
+  fill_in 'Name', with: name
+  # fill_in 'Brewery', with: brewery_id
+  click_button 'Add Beer'
 end
