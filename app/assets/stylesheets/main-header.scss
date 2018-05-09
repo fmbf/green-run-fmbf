@@ -46,7 +46,7 @@
 }
 
 .header-user-div {
-  display: inline;
+  display: inline-block;
   font-size: 0.45em;
 
   padding: 0.7em 0;
@@ -81,6 +81,8 @@
   input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #f9af53; // beer color
     opacity: 0.5; /* Firefox */
+    text-align: center;
+    letter-spacing: 1px;
   }
 }
 

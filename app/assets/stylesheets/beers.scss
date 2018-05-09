@@ -3,9 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .beer-name {
-  // text-decoration: underline;
-  // text-decoration-color: rgba(0, 0, 0, 0.3);
-  // font-weight: 200;
   padding-bottom: 0.5em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -16,24 +13,73 @@ ul li {
 }
 
 .beer-index-element {
-  font-weight: 400;
-  margin: 0.2em 0;
   display: flex;
-  align-items: center;
+  margin: 1em;
+  padding: 1em;
+
+  font-weight: 400;
+  font-size: 0.7em;
+  // margin: 0.2em 0;
   // border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  // height: 1em;
-  // a {
-  //   color: #161e28; //anblack
-  // }
+  border: 1px solid #f9af53; // beer color
+  background-color: #f9af53; // beer color
+
+  border: 1px solid #161e28; //anblack
+  background-color: transparent;
+  border-radius: 5px;
+
+  height: 2em;
+  min-width: 18em;
+  max-width: 18em;
+
+  h4 {
+    margin: auto;
+    text-align: center;
+    color: #161e28; //anblack
+    // border: 1px solid red;
+    // text-decoration: none;
+  }
+
+  .beer-avatar {
+    img {
+      width: 2.5em;
+      // height: 2.5em;
+    }
+    width: 2.4em;
+    height: 2.4em;
+    // padding: 0.2em;
+    // margin-left: 0.2em;
+    // border: 1px solid red;
+    border-radius: 200px;
+    overflow: hidden;
+  }
+}
+
+.beer-index-element:hover {
+  border-color: #f9af53; // beer color
+  background-color: #f9af53; // beer color
 }
 
 .beer-index-div {
   // border: 1px solid red;
+  border-radius: 9px;
+  // padding: 1em;
+  // background-color: #00B7FF; //blue
+  background-color: #161e28; //anblack
+  background-color: #f9af53; // beer color
+  background-color: #eee;
+  background-color: #f9f9f9;
+  background-color: transparent;
+  a {
+    color: #161e28; //anblack
+    text-decoration: none;
+  }
 
-  // display: flex;
-  max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  // max-width: 90%;
 
-  overflow: scroll;
+  // overflow: scroll;
 
 }
 
@@ -46,23 +92,17 @@ ul li {
 
 #beerform input, #beerform select {
   margin: 1em 0;
-  // background-color: red;
 }
 
 
 .beer-nav-div {
-  // display: inline;
   margin: 2em 1em;
   padding: 0.5em;
-  // border: 1px solid rgba(0, 0, 0, 0.1);
   a {
     margin: 1em 1em;
   }
 
   i:hover {
     color: #161e28; //anblack
-    // border-bottom: 1px solid #161e28; //anblack
-    // border-radius: 7px;
-    // background-color: #161e28; //anblack
   }
 }

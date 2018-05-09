@@ -6,9 +6,23 @@
   <% if @beers %>
     <div class="beer-index-div">
       <% @beers.each do |beer| %>
+      <a href="<%= "/beers/#{beer.id}/" %>">
       <div class="beer-index-element">
-        <%= link_to beer.name, beer_url(beer) %>
+        <!-- <%= link_to beer.name, beer_url(beer) %> -->
+        <!-- <a href="<%= "/beers/#{beer.id}/" %>" id=''> -->
+          <h4>
+            <%= beer.name %>
+          </h4>
+        <!-- </a> -->
+
+        <!-- possible pic for each beer  -->
+        <div class="beer-avatar">
+          <!-- <img alt="toast" src="/assets/toast.png"> -->
+          <img alt="toast" src="https://ui-avatars.com/api/?name=<%= beer.brewery.name %>&background=161e28&color=f9af53">
+
+        </div>
       </div>
+      </a>
       <% end %>
     <% end %>
   </div>
@@ -18,8 +32,5 @@
   </form>
 
 </div>
-<br>
-<br>
-<br>
 <br>
 <br>

@@ -60,8 +60,6 @@
     </header>
 
     <div id="main-content" class="content animated fadeIn">
-      <%= yield %>
-
       <% if flash[:errors] %>
         <div class="content-padded animated fadeInUp errors">
           <% flash[:errors].each do |error| %>
@@ -69,9 +67,8 @@
           <% end %>
         </div>
       <% end %>
+      <%= yield %>
     </div>
-
-
 
     <div class="footer">
       For Liftopia <i class="far fa-heart"></i> |
@@ -84,11 +81,11 @@
       let sticky = header.offsetTop;
 
       function addSticky() {
-        if (window.pageYOffset >= sticky) {
-          header.classList.add("sticky");
-        } else {
-          header.classList.remove("sticky");
-        }
+        // if (window.pageYOffset >= sticky) {
+        //   header.classList.add("sticky");
+        // } else {
+        //   header.classList.remove("sticky");
+        // }
       }
     </script>
   </body>
