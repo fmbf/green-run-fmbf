@@ -1,36 +1,23 @@
 <div class="content-padded">
-
-  <h1 class="beer-name">All Beers</h1>
-  <!-- <input type="search" name="" value="search"> -->
-
-  <% if @beers %>
-    <div class="beer-index-div">
-      <% @beers.each do |beer| %>
-      <a href="<%= "/beers/#{beer.id}/" %>">
-      <div class="beer-index-element">
-        <!-- <%= link_to beer.name, beer_url(beer) %> -->
-        <!-- <a href="<%= "/beers/#{beer.id}/" %>" id=''> -->
-          <h4>
-            <%= beer.name %>
-          </h4>
-        <!-- </a> -->
-
-        <!-- possible pic for each beer  -->
-        <div class="beer-avatar">
-          <!-- <img alt="toast" src="/assets/toast.png"> -->
-          <img alt="toast" src="https://ui-avatars.com/api/?name=<%= beer.brewery.name %>&background=161e28&color=f9af53">
-
-        </div>
+  <h1 class="h1-titles">All Beers</h1>
+    <% if @beers %>
+      <div class="beer-index-div">
+        <% @beers.each do |beer| %>
+        <a class="beer-index-element-parent" href="<%= "/beers/#{beer.id}" %>">
+          <div class="beer-index-element">
+              <h4><%= beer.name %></h4>
+            <div class="beer-avatar">
+              <img alt="toast" src="https://ui-avatars.com/api/?name=<%= beer.brewery.name %>&background=161e28&color=f9af53">
+            </div>
+          </div>
+        </a>
+        <% end %>
       </div>
-      </a>
-      <% end %>
     <% end %>
-  </div>
   <br>
   <form method="get" action="/beers/new">
     <button type="submit">Add Beer</button>
   </form>
-
 </div>
 <br>
 <br>

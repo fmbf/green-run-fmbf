@@ -1,6 +1,6 @@
 <div class="content-padded">
   <br>
-  <h1 class="beer-name"><%= @beer.name %></h1>
+  <h1 class="h1-titles"><%= @beer.name %></h1>
   <p>Brewed by <%= link_to "#{@beer.brewery.name}", brewery_url(@beer.brewery) %></p>
 
   <!-- <%= link_to 'All Beer', beers_url %> -->
@@ -31,7 +31,7 @@
 <!-- Iterate and display all comments for this beer -->
 <div class="comment-div">
   <div class="content-padded">
-    <h1 class="beer-name">Comments <i class="far fa-comments"></i></h1>
+    <h1 class="h1-titles">Comments <i class="far fa-comments"></i></h1>
     <% if @beer.comments %>
       <% @beer.comments.each do |comment| %>
       <br>

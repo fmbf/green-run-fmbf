@@ -1,27 +1,26 @@
 <div class="content-padded">
 
-  <h1 class="beer-name">Matching Beers</h1>
+  <h1 class="h1-titles">Matching Beers</h1>
 
   <% if @search_result %>
-    <% if @search_result.empty? %>
-      <p>No matches found...</p>
-    <% end %>
-    <ul>
+    <% if @search_result.empty? %><p>No matches found...</p><% end %>
+    <div class="beer-index-div">
       <% @search_result.each do |beer| %>
-      <li>
-        <%= link_to beer.name, beer_url(beer) %>
-      </li>
+      <a class="beer-index-element-parent" href="<%= "/beers/#{beer.id}/" %>">
+        <div class="beer-index-element">
+            <h4><%= beer.name %></h4>
+          <div class="beer-avatar">
+            <img alt="toast" src="https://ui-avatars.com/api/?name=<%= beer.brewery.name %>&background=161e28&color=f9af53">
+          </div>
+        </div>
+      </a>
       <% end %>
-    </ul>
+    </div>
   <% end %>
-
   <br>
-  <!-- <%= link_to 'Back To All Beer', beers_url %> -->
   <a href="/beers"><i class="fas fa-arrow-left fa-lg"></i> <strong>Back to all</strong></a>
-
   <br>
   <br>
   <br>
   <br>
-  <!-- <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
 </div>

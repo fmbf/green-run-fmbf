@@ -4,7 +4,6 @@
 
 
 .comment-div{
-  // border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 9px;
 
   font-size: 0.8em;
@@ -13,11 +12,6 @@
   padding: 0 0 2em 0;
 
   background-color: #eee;
-  // background-color: #f9af53;
-  // background-color: rgba(249, 175, 83, 0.99);
-  // color: #f9af53;
-
-  // color: #f1f7ee;
   padding: 10px 50px;
 
   h2 {
@@ -26,8 +20,6 @@
 }
 
 .comment-username {
-  // border: 2px solid red;
-  // text-transform: lowercase;
   text-decoration: underline;
   font-weight: bold;
   text-decoration-color: rgba(0, 0, 0, 0.2);
@@ -35,14 +27,11 @@
 }
 
 .comment-body {
-  // font-style: italic;
-  // display: flex;
   margin-left: 1em;
   font-size: 0.9em;
 }
 
 .add-comment-div {
-  // border: 1px solid #aaa;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   padding: 2em 1em;

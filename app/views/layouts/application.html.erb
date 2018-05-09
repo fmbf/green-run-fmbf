@@ -23,14 +23,13 @@
       </div>
 
       <div class="header-user-div">
-
         <% if logged_in? %>
+          <!-- LoggedIn Header -->
           <div class="header" id="myHeader">
             <p><%= current_user.username %></p>
             <a href="/session" data-method="delete" name='Sign Out' id="sign-out">
               <i class="fas fa-sign-out-alt"></i>
             </a>
-
             <div id="search-div">
               <form class="" action="/searches/index" method="get">
                 <i class="fas fa-search"></i>
@@ -40,22 +39,17 @@
               </form>
             </div>
           </div>
-
-
         <% else %>
           <div class="button-div">
+            <!-- Login & Signup Buttons -->
             <div class="button button-1">
               <%= link_to "Log In", new_session_url %>
             </div>
-
             <div class="button button-2">
               <%= link_to "Sign Up", new_user_url %>
             </div>
           </div>
-
-
         <% end %>
-
       </div>
     </header>
 

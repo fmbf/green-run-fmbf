@@ -1,17 +1,18 @@
 <div class="content-padded">
-
-  <h1 class="beer-name">Beers by <%= @brewery.name %></h1>
-
-  <% if @brewery.beers %>
-    <ul>
-      <% @brewery.beers.each do |beer| %>
-      <li>
-        <%= link_to beer.name, beer_url(beer) %>
-      </li>
-      <% end %>
+  <h1 class="h1-titles">Beers by <%= @brewery.name %></h1>
+    <% if @brewery.beers %>
+      <div class="beer-index-div">
+        <% @brewery.beers.each do |beer| %>
+        <a class="beer-index-element-parent" href="<%= "/beers/#{beer.id}" %>">
+          <div class="beer-index-element">
+              <h4><%= beer.name %></h4>
+            <div class="beer-avatar">
+              <img alt="toast" src="https://ui-avatars.com/api/?name=<%= beer.brewery.name %>&background=161e28&color=f9af53">
+            </div>
+          </div>
+        </a>
+        <% end %>
+      </div>
     <% end %>
-    </ul>
-
-
   <%= link_to 'All Beer', beers_url %>
 </div>
